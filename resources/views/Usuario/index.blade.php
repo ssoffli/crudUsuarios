@@ -29,7 +29,7 @@
               <tr>
                 <td>{{$usuario->apellido}}</td>
                 <td>{{$usuario->nombre}}</td>
-                <td>{{$usuario->fechaNacimiento}}</td>
+                <td>{{$edad=\Carbon\Carbon::parse($usuario->fechaNacimiento)->age}}</td>
                 <td>{{$usuario->email}}</td>
                 <td>{{$usuario->telefono}}</td>
                 <td><a class="btn btn-primary btn-xs" href="{{action('UsuarioController@edit', $usuario->id)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>

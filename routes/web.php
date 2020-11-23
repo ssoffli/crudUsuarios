@@ -13,8 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Usuario.index');
-});
-
 Route::resource('usuario', 'UsuarioController');
