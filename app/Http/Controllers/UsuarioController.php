@@ -108,7 +108,7 @@ class UsuarioController extends Controller
             'apellido'=>'required|max:255', 
             'nombre'=>'required', 
             'fechaNacimiento'=>'required', 
-            'email'=>'required|max:255|email|unique:usuarios', 
+            'email'=>'required|max:255|email', 
             'telefono'=>'required|max:11'
         ],
         // Mensajes para validación
@@ -125,7 +125,6 @@ class UsuarioController extends Controller
             'email.required' => 'El campo email no puede quedar en blanco!',
             'email.email' => 'Ingrese un email valido, asegurese de escribir el @',
             'email.max' => 'Email muy largo. Ingrese hasta 255 caracteres',
-            'email.unique' => 'El correo ingresado ya existe, pruebe con un email diferente...',
             
             'telefono.required' => 'El telefono no puede quedar en blanco',
             'telefono.max' => 'El telefono debe contener máximo 11 dígitos'
