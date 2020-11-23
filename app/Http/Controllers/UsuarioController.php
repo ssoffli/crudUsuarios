@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Usuario;
 
 class UsuarioController extends Controller
 {
@@ -13,7 +14,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios=Usuarios::orderBy('id','DESC')->paginate(3);
+        $usuarios=Usuario::orderBy('apellido','ASC')->paginate(10);
         return view('Usuario.index',compact('usuarios'));
     }
 

@@ -42,7 +42,7 @@
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
-										<input type="text" name="fechaNacimiento" id="fechaNacimiento" class="form-control input-sm" placeholder="Ingrese Fecha Nacimiento">
+										<input type="text" name="fechaNacimiento" id="fechaNacimiento" class="form-control input-sm" placeholder="Ingrese fecha nacimiento como: AAAA/MM/DD">
 									</div>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
