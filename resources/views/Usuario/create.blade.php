@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
 	<section class="content">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-6 col-md-offset-3">
 			@if (count($errors) > 0)
 			<div class="alert alert-danger">
 				<strong>Error!</strong> Revise los campos obligatorios.<br><br>
@@ -30,11 +30,13 @@
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
+										<label for="apellido">Apellidos:</label>
 										<input type="text" name="apellido" id="apellido" class="form-control input-sm" placeholder="Ingrese los Apellidos">
 									</div>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
+										<label for="nombre">Nombres:</label>
 										<input type="text" name="nombre" id="nombre" class="form-control input-sm" placeholder="Ingrese los nombres">
 									</div>
 								</div>
@@ -42,18 +44,21 @@
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
-										<input type="text" name="fechaNacimiento" id="fechaNacimiento" class="form-control input-sm" placeholder="Ingrese fecha nacimiento como: AAAA/MM/DD">
+										<label for="fechaNacimiento">Fecha de Nacimiento:</label>
+										<input type="date" name="fechaNacimiento" id="fechaNacimiento" class="form-control input-sm col-md-10" min="1900-01-01" max="2020-01-01" placeholder="Seleccione Fecha Nacimiento   -->">
 									</div>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
+										<label for="email">Email:</label>
 										<input type="mail" name="email" id="email" class="form-control input-sm" placeholder="Ingrese el email">
 									</div>
 								</div>
                             </div>
-                            <div class="row">
+                            <div class="row col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="number" name="telefono" id="telefono" class="form-control input-sm" placeholder="Ingrese el nro telefonico">
+									<label for="telefono">Teléfono:</label>
+									<input type="tel" name="telefono" id="telefono" class="form-control input-sm" pattern="[0-9]{10}" autocomplete="off" placeholder="Ingrese sólo 10 números">
                                 </div>
                             </div>
 							<div class="row">

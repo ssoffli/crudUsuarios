@@ -18,7 +18,7 @@
                <th>Nombre</th>
                <th>Edad</th>
                <th>Email</th>
-               <th>Telefono</th>
+               <th>Teléfono</th>
                <th>Editar</th>
                <th>Eliminar</th>
              </thead>

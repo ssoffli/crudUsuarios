@@ -36,7 +36,34 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[ 'apellido'=>'required', 'nombre'=>'required', 'fechaNacimiento'=>'required', 'email'=>'required', 'telefono'=>'required']);
+        //Validacion de los campos del formulario
+        $this->validate($request,
+        [ 
+            'apellido'=>'required|max:255', 
+            'nombre'=>'required', 
+            'fechaNacimiento'=>'required', 
+            'email'=>'required|max:255|email|unique:usuarios', 
+            'telefono'=>'required|max:10'
+        ],
+        // Mensajes para validación
+        [
+            'apellido.required' => 'Ingrese un apellido, no puede quedar en blanco!',
+            'apellido.max' => 'Apellido muy largo. Ingrese hasta 255 caracteres',
+            
+            'nombre.required' => 'Ingrese un nombre, no puede quedar en blanco!',
+            'nombre.max' => 'Nombre muy largo. Ingrese hasta 255 caracteres',
+            
+            'fechaNacimiento.required' => 'Ingrese una fecha, el campo no puede quedar en blanco!',
+            'fechaNacimiento.required' => 'Ingrese una fecha valida. Formato AAAA/MM/DD',
+            
+            'email.required' => 'El campo email no puede quedar en blanco!',
+            'email.email' => 'Ingrese un email valido, asegurese de escribir el @',
+            'email.max' => 'Email muy largo. Ingrese hasta 255 caracteres',
+            'email.unique' => 'El correo ingresado ya existe, pruebe con un email diferente...',
+            
+            'telefono.required' => 'El telefono no puede quedar en blanco!',
+            'telefono.max' => 'El telefono debe contener máximo 10 dígitos'
+        ]);
         Usuario::create($request->all());
         return redirect()->route('usuario.index')->with('success','Usuario creado con exito');
     }
@@ -62,7 +89,7 @@ class UsuarioController extends Controller
     public function edit($id)
     {
         $usuario=Usuario::find($id);
-        return view('usuario.edit',compact('usuarios'));
+        return view('usuario.edit',compact('usuario'));
     }
 
     /**
@@ -74,8 +101,35 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[ 'apellido'=>'required', 'nombre'=>'required', 'fechaNacimiento'=>'required', 'email'=>'required', 'telefono'=>'required']);
- 
+
+        //Validacion de los campos del formulario
+        $this->validate($request,
+        [ 
+            'apellido'=>'required|max:255', 
+            'nombre'=>'required', 
+            'fechaNacimiento'=>'required', 
+            'email'=>'required|max:255|email|unique:usuarios', 
+            'telefono'=>'required|max:11'
+        ],
+        // Mensajes para validación
+        [
+            'apellido.required' => 'Ingrese un apellido, no puede quedar en blanco!',
+            'apellido.max' => 'Apellido muy largo. Ingrese hasta 255 caracteres',
+            
+            'nombre.required' => 'Ingrese un nombre, no puede quedar en blanco!',
+            'nombre.max' => 'Nombre muy largo. Ingrese hasta 255 caracteres',
+            
+            'fechaNacimiento.required' => 'Ingrese una fecha, el campo no puede quedar en blanco!',
+            'fechaNacimiento.required' => 'Ingrese una fecha valida. Formato AAAA/MM/DD',
+            
+            'email.required' => 'El campo email no puede quedar en blanco!',
+            'email.email' => 'Ingrese un email valido, asegurese de escribir el @',
+            'email.max' => 'Email muy largo. Ingrese hasta 255 caracteres',
+            'email.unique' => 'El correo ingresado ya existe, pruebe con un email diferente...',
+            
+            'telefono.required' => 'El telefono no puede quedar en blanco',
+            'telefono.max' => 'El telefono debe contener máximo 11 dígitos'
+        ]);
         Usuario::find($id)->update($request->all());
         return redirect()->route('usuario.index')->with('success','Usuario actualizado con exito!');
     }
