@@ -56,19 +56,19 @@
 									</div>
 								</div>
                             </div>
-                            <div class="row">
-                                <div class="form-group">
-									<label for="telefono">Teléfono:</label>
-                                    <input type="tel" name="telefono" id="telefono" class="form-control input-sm" pattern="[0-9]{10}" placeholder="Ingrese sólo 10 números" value="{{$usuario->telefono}}">
-                                </div>
-                            </div>
 							<div class="row">
-
+								<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="form-group">
+										<label for="telefono">Teléfono:</label>
+										<input type="tel" name="telefono" id="telefono" class="form-control input-sm" pattern="[0-9]{10}" placeholder="Ingrese sólo 10 números" value="{{$usuario->telefono}}">
+									</div>
+								</div>
+							</div>
+							<div class="row">
 								<div class="col-xs-12 col-sm-12 col-md-12">
 									<input type="submit"  value="Actualizar Usuario" class="btn btn-success btn-block">
 									<a href="{{ route('usuario.index') }}" class="btn btn-info btn-block" >Volver</a>
 								</div>	
-
 							</div>
 						</form>
 					</div>

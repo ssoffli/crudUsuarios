@@ -19,8 +19,9 @@
                <th>Edad</th>
                <th>Email</th>
                <th>Teléfono</th>
+               <th>Ver</th>
                <th>Editar</th>
-               <th>Eliminar</th>
+               <th>Borrar</th>
              </thead>
              <tbody>
 
@@ -32,6 +33,7 @@
                 <td>{{$edad=\Carbon\Carbon::parse($usuario->fechaNacimiento)->age}}</td>
                 <td>{{$usuario->email}}</td>
                 <td>{{$usuario->telefono}}</td>
+                <td><a class="btn btn-success btn-xs" href="{{action('UsuarioController@show', $usuario->id)}}" ><span class="glyphicon glyphicon-search"></span></a></td>
                 <td><a class="btn btn-primary btn-xs" href="{{action('UsuarioController@edit', $usuario->id)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
                 <td>
                   <form action="{{action('UsuarioController@destroy',$usuario->id)}}" method="post">
