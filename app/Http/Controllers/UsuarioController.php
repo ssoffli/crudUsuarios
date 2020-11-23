@@ -65,7 +65,7 @@ class UsuarioController extends Controller
             'telefono.max' => 'El telefono debe contener máximo 10 dígitos'
         ]);
         Usuario::create($request->all());
-        return redirect()->route('usuario.index')->with('success','Usuario creado con exito');
+        return redirect()->route('usuario.index')->with('message','Usuario creado con exito');
     }
 
     /**
@@ -130,7 +130,7 @@ class UsuarioController extends Controller
             'telefono.max' => 'El telefono debe contener máximo 11 dígitos'
         ]);
         Usuario::find($id)->update($request->all());
-        return redirect()->route('usuario.index')->with('success','Usuario actualizado con exito!');
+        return redirect()->route('usuario.index')->with('message','Usuario actualizado con exito!');
     }
 
     /**
@@ -142,6 +142,6 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
         Usuario::find($id)->delete();
-        return redirect()->route('usuario.index')->with('success','Usuario eliminado con exito!');
+        return redirect()->route('usuario.index')->with('message','Usuario eliminado con exito!');
     }
 }

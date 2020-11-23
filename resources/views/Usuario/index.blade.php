@@ -1,5 +1,12 @@
 @extends('layouts.layout')
 @section('content')
+
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
+
 <div class="row">
   <section class="content">
     <div class="col-md-8 col-md-offset-2">
