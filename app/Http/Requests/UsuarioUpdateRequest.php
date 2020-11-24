@@ -27,7 +27,7 @@ class UsuarioUpdateRequest extends FormRequest
             'apellido'=>'required|max:255', 
             'nombre'=>'required', 
             'fechaNacimiento'=>'required', 
-            'email'=>'required|max:255|email', 
+            'email'=>'required|max:255|email|unique:usuarios,email,'. $this->usuario, 
             'telefono'=>'required|max:10'
         ];
     }

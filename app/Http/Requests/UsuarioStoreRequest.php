@@ -27,7 +27,7 @@ class UsuarioStoreRequest extends FormRequest
             'apellido'=>'required|max:255', 
             'nombre'=>'required', 
             'fechaNacimiento'=>'required', 
-            'email'=>'required|max:255|email|unique:usuarios', 
+            'email'=>'required|max:255|email|unique:usuarios,email', 
             'telefono'=>'required|max:10'
         ];
     }

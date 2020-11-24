@@ -45,7 +45,7 @@
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
 										<label for="fechaNacimiento">Fecha de Nacimiento:</label>
-										<input type="date" name="fechaNacimiento" id="fechaNacimiento" class="form-control input-sm col-md-10" min="1900-01-01" max="2020-01-01" placeholder="Seleccione Fecha Nacimiento   -->">
+										<input type="date" name="fechaNacimiento" id="fechaNacimiento" class="form-control input-sm col-md-10" min="1900-01-01" max="2019-11-20">">
 									</div>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
