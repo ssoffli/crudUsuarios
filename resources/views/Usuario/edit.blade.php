@@ -27,7 +27,7 @@
 					<div class="table-container">
 						<form method="POST" action="{{ route('usuario.update',$usuario->id) }}"  role="form">
 							{{ csrf_field() }}
-							<input name="_method" type="hidden" value="PATCH">
+							<input name="_method" type="hidden" value="PUT">
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
@@ -46,7 +46,7 @@
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
 										<label for="fechaNacimiento">Fecha de Nacimiento:</label>
-										<input type="date" name="fechaNacimiento" id="fechaNacimiento" class="form-control input-sm" placeholder="Seleccione Fecha Nacimiento   -->" value="{{$usuario->fechaNacimiento}}">
+										<input type="date" name="fechaNacimiento" id="fechaNacimiento" class="form-control input-sm" value="{{$usuario->fechaNacimiento}}">
 									</div>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
